@@ -1,0 +1,17 @@
+#### How to integrate semantic Checks to Checkstyle ###
+0. Download wordnet 3.0 and move it to C:\WordNet\3.0, under linux or other system you need to change the code and put the right path for wordnet
+refactoring will be made to make it easier
+1. go into latest version of Checkstyle's code into the folder  checks/naming copy paste the semantic folder 
+2. in Checkstyle's root where the pom.xml is copy paste uncleBobChecks.xml
+3. download from here : https://www.dropbox.com/s/xpvixrlo1nvbsb5/semantic%20analysis%20Lib.rar?dl=0 the jar files needed,
+put them into Checkstyle 
+3. Now you must compile Checkstyle
+* mvn clean compile
+then use 
+* mvn clean package -Passembly
+it will create many files in the target folder 
+4. Use the next command to run the right jar file with the right attributes
+java -jar target/checkstyle-X.X-SNAPSHOT-all.jar -c uncleBobChecks.xml folderOrFileToCheck
+
+some of the above information is taken from http://checkstyle.sourceforge.net/cmdline.html
+
